@@ -12,7 +12,7 @@ async function run() {
     
     const fields = ['action', 'actor', 'eventName', 'issue', 'job', 'payload', 'ref', 'repo', 'runId', 'runNumber', 'workflow']
 
-    fields.forEach((field) => core.info(`${field}: ${github.context[field]}`))
+    fields.forEach((field) => core.info(`${field}: ${JSON.stringify(github.context[field], null, 2)}`))
 
     core.endGroup()
   } catch (error) {
